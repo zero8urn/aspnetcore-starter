@@ -49,6 +49,7 @@ namespace aspnetcore_starter
             else
             {
                 app.UseHsts();
+                app.UseHttpsRedirection();
             }
             // For most apps, calls to UseAuthentication, UseAuthorization, and UseCors must appear between the calls to UseRouting and UseEndpoints to be effective
             app.UseRouting();
@@ -56,7 +57,6 @@ namespace aspnetcore_starter
             app.ConfigureSwagger(provider, Configuration);
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseHttpsRedirection();
            app.ConfigureMvc(); // contains UseEndpoints
         }
     }
